@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- Set the language English -->
+
+<head>
+  <meta charset="UTF-8"> <!-- Define the character encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Ensure responsiveness on different devices -->
+  <title>Piano Simulator</title> <!-- Title of the webpage -->
+
+  <!-- Include reset.css to normalize browser styles -->
+  <link rel="stylesheet" href="./src/styles/reset.css">
+
+  <!-- Include main.css for the custom styles of the piano simulator -->
+  <link rel="stylesheet" href="./src/styles/main.css">
+
+  <!-- Load the Poppins font from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,700;1,100;1,200;1,300;1,400&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <!-- Main container for the piano simulator -->
+  <div class="container">
+    <header>
+      <h2>Virtual Piano</h2> <!-- Header with the title of the application -->
+      <div class="column score">
+        <span>Score: </span><span id="score">0</span> <!-- Score display -->
+      </div>
+      <!-- Volume slider to control audio volume -->
+      <div class="column volume-slider">
+        <span>Volume</span> <!-- Label for the volume control -->
+        <input type="range" min="0" max="1" value="0.5" step="any"> <!-- Slider for volume control -->
+      </div>
+
+      <!-- Checkbox to toggle key labels on the piano -->
+      <div class="column keys-check">
+        <span>Keys</span> <!-- Label for the keys toggle -->
+        <input type="checkbox" checked> <!-- Checkbox for toggling key visibility -->
+      </div>
+
+      <div class="column score-reset">
+        <button id="reset-score">Reset Score</button>
+      </div>
+    </header>
+
+    <!-- Game Controls Section -->
+    <div class="game-controls">
+      <h3 id="game-status">Press "Start Challenge" to begin!</h3>
+      <button id="start-challenge">Start Challenge</button>
+      <div class="timer">
+        <span>Time Left: </span><span id="time-left">15</span>s
+      </div>
+    </div>
+
+
+    <!-- List of piano keys -->
+    <ul class="piano-keys">
+      <!-- Each list item represents a piano key, with data attributes for key mapping -->
+      <li class="key white" data-key="a"><span>a</span></li> <!-- White key labeled "a" -->
+      <li class="key black" data-key="w"><span>w</span></li> <!-- Black key labeled "w" -->
+      <li class="key white" data-key="s"><span>s</span></li>
+      <li class="key black" data-key="e"><span>e</span></li>
+      <li class="key white" data-key="d"><span>d</span></li>
+      <li class="key black" data-key="f"><span>f</span></li>
+      <li class="key white" data-key="t"><span>t</span></li>
+      <li class="key black" data-key="g"><span>g</span></li>
+      <li class="key white" data-key="y"><span>y</span></li>
+      <li class="key black" data-key="h"><span>h</span></li>
+      <li class="key white" data-key="u"><span>u</span></li>
+      <li class="key black" data-key="j"><span>j</span></li>
+      <li class="key white" data-key="k"><span>k</span></li>
+      <li class="key black" data-key="o"><span>o</span></li>
+      <li class="key white" data-key="l"><span>l</span></li>
+      <li class="key black" data-key="p"><span>p</span></li>
+      <li class="key white" data-key=";"><span>;</span></li>
+    </ul>
+  </div>
+
+  <!-- JavaScript engine for the piano simulator -->
+  <script src="./src/scripts/engine.js" defer></script>
+</body>
+
+</html>
